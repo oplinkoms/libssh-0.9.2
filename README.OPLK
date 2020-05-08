@@ -1,0 +1,7 @@
+1.  /etc/ssh/libssh_server_config
+  1) The config file is only used by libssh.so (netopeer2)
+  2) only libssh 0.9.0+ support it; current libssh version is 0.9.4
+  3) add config file (/etc/ssh/libssh_server_config) to support no-cbc and disable cbc.
+     nessus scan TCP/.830 and TCP/832, and find two low level vulnerabilities about cbc
+  4) If /etc/ssh/libssh_server_config is not existed, netopeer2 will used default encryption algorithms, including
+    3des-cbc,aes128-cbc,aes128-ctr,aes128-gcm@openssh.com,aes192-cbc,aes192-ctr,aes256-cbc,aes256-ctr,aes256-gcm@openssh.com
